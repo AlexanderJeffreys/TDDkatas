@@ -7,7 +7,6 @@ namespace Tdd.Exercise7.Tests
     [TestFixture]
     public class GameShould
     {
-        private Round _round;
         private Game _game;
         private IPlayer _player1;
         private IPlayer _player2;
@@ -15,8 +14,7 @@ namespace Tdd.Exercise7.Tests
         [SetUp]
         public void SetUp()
         {
-            _round = new Round();
-            _game = new Game(_round);
+            _game = new Game();
 
             _player1 = Substitute.For<IPlayer>();
             _player2 = Substitute.For<IPlayer>();

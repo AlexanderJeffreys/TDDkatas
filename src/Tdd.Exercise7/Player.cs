@@ -4,7 +4,7 @@
     {
         public Hand RevealHand()
         {
-            throw new System.NotImplementedException();
+            return Hand.Paper;
         }
     }
 }

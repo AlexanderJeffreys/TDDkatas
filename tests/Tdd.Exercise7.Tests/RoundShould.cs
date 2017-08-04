@@ -26,7 +26,7 @@ namespace Tdd.Exercise7.Tests
             _player1.RevealHand().Returns(Hand.Paper);
             _player2.RevealHand().Returns(Hand.Scissors);
             var winner = _round.Play(_player1, _player2);
-            winner.ShouldBe(Winner.Player2);
+            winner.ShouldBe(_player2);
         }
         [Test]
         public void Decide_paper_beats_rock()
@@ -34,7 +34,7 @@ namespace Tdd.Exercise7.Tests
             _player1.RevealHand().Returns(Hand.Paper);
             _player2.RevealHand().Returns(Hand.Rock);
             var winner = _round.Play(_player1, _player2);
-            winner.ShouldBe(Winner.Player1);
+            winner.ShouldBe(_player1);
         }
 
         [Test]
@@ -43,7 +43,7 @@ namespace Tdd.Exercise7.Tests
             _player1.RevealHand().Returns(Hand.Rock);
             _player2.RevealHand().Returns(Hand.Scissors);
             var winner = _round.Play(_player1, _player2);
-            winner.ShouldBe(Winner.Player1);
+            winner.ShouldBe(_player1);
         }
 
         [Test]
@@ -52,7 +52,7 @@ namespace Tdd.Exercise7.Tests
             _player1.RevealHand().Returns(Hand.Rock);
             _player2.RevealHand().Returns(Hand.Rock);
             var winner = _round.Play(_player1, _player2);
-            winner.ShouldBe(Winner.None);
+            winner.ShouldBe(null);
         }
     }
 
